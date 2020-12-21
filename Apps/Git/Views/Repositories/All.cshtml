@@ -24,24 +24,59 @@
                         </thead>
                         @foreach (var item in Model)
                         {
-                                      <tbody>
-                                          <tr class="table-light">
-                                              <th scope="row">@item.Name</th>
-                                              <td>@item.Owner</td>
-                                              <td>@item.CreatedOn</td>
-                                              <td>@item.ComitsCount</td>
-                                              <td>
-                                                  <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?id=@item.Id">Commit</a>
-                                              </td>
-                                              @if(!item.IsPublic)
-                                              {
-                                                  <td>"Your private repository"</td>
-                                              }
-                                          </tr>
+                            <tbody>
+                                @if (item.IsPublic)
+                                {
+                                    <tr class="table-light">
+                                        <th scope="row">@item.Name</th>
+                                        <td>@item.Owner</td>
+                                        <td>@item.CreatedOn</td>
+                                        <td>@item.ComitsCount</td>
+                                        <td>
+                                            <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?id=@item.Id">Commit</a>
+                                        </td>
+                                    </tr>
+                                 }
                             </tbody>
-                            
                         }
                     </table>
+                    @if (Model.Any(x => !x.IsPublic))
+                    {
+                        <div class="text-center">
+                            <h2 id="tables">Your Private</h2>
+                            <p>Repositories</p>
+                        </div>
+
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Owner</th>
+                                                    <th scope="col">Created On</th>
+                                                    <th scope="col">Commits Count</th>
+                                                    <th scope="col">Commit</th>
+                                                </tr>
+                                            </thead>
+                                            @foreach (var repository in Model)
+                                            {
+                                                    <tbody>
+                                                        @if (!repository.IsPublic)
+                                                        {
+                                                            <tr class="table-light">
+                                                                <th scope="row">@repository.Name</th>
+                                                                <td>@repository.Owner</td>
+                                                                <td>@repository.CreatedOn</td>
+                                                                <td>@repository.ComitsCount</td>
+                                                                <td>
+                                                                    <a class="btn btn-block btn-primary text-white mb-3" href="/Commits/Create?id=@repository.Id">Commit</a>
+                                                                </td>
+                                                            </tr>
+                                                          }
+                                                    </tbody>
+                                             }
+                                </table>
+                     }
+
                 </div>
             </div>
         </div>

@@ -1,10 +1,9 @@
-﻿using Git.Data;
-using Git.ViewModels.Usres;
-using System;
-using System.Collections.Generic;
+﻿using System.Text;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
+
+using Git.Data;
+using Git.ViewModels.Usres;
 
 namespace Git.Services
 {

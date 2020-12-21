@@ -1,7 +1,4 @@
 ﻿using Git.ViewModels.Usres;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Git.Services
 {

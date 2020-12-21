@@ -29,15 +29,6 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<User>()
-            //  .HasMany(x => x.Commits)
-            //  .WithOne(x => x.Creator)
-            //  .HasForeignKey(x => x.CreatorId).OnDelete(DeleteBehavior.NoAction);
-
-            //modelBuilder.Entity<User>()
-            //    .HasMany(x => x.Repositories)
-            //    .WithOne(x => x.Owner)
-            //    .HasForeignKey(x => x.OwnerId).OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Commit>()
                 .HasOne(x => x.Repository)

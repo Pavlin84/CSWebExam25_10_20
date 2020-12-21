@@ -1,10 +1,8 @@
-﻿using Git.Services;
-using Git.ViewModels.Repositores;
-using SUS.HTTP;
+﻿using SUS.HTTP;
 using SUS.MvcFramework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
+using Git.Services;
+using Git.ViewModels.Repositores;
 
 namespace Git.Controllers
 {
