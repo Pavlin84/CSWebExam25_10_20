@@ -75,7 +75,7 @@ namespace Git.Controllers
             {
                 return this.Error(GlobalConstants.UsernameAvaivableError);
             }
-            if (userService.IsEmaiTakne(inputModel.Email))
+            if (userService.IsEmaiTaken(inputModel.Email))
             {
                 return this.Error(GlobalConstants.EmailAvaivableError);
             }

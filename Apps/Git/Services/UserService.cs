@@ -37,7 +37,7 @@ namespace Git.Services
             return userId;
         }
 
-        public bool IsEmaiTakne(string email)
+        public bool IsEmaiTaken(string email)
         {
             if (db.Users.Any(x => x.Email == email))
             {

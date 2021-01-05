@@ -10,6 +10,6 @@ namespace Git.Services
 
         public bool IsUsernameTaken(string userName);
 
-        public bool IsEmaiTakne(string email);
+        public bool IsEmaiTaken(string email);
     }
 }
